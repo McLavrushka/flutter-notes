@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_notes/state/notes_view_model.dart';
+import 'package:flutter_notes/ui/pages/main_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (_) => NotesViewModel(),
+    child: NotesApp(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class NotesApp extends StatelessWidget {
+  const NotesApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Notes',
       theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
-      home: const Scaffold(),
+      home: MainPage(),
     );
   }
 }
