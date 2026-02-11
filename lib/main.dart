@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_notes/core/theme/app_theme.dart';
 import 'package:flutter_notes/state/notes_view_model.dart';
 import 'package:flutter_notes/ui/pages/main_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (_) => NotesViewModel(),
-    child: NotesApp(),
-  ));
+  runApp(const NotesApp());
 }
 
 class NotesApp extends StatelessWidget {
@@ -15,12 +13,16 @@ class NotesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Notes',
-      theme: ThemeData(
-        useMaterial3: true,
+    return ChangeNotifierProvider(
+      create: (_) => NotesViewModel(),
+      child: MaterialApp(
+        title: 'Flutter Notes',
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
+        themeMode: ThemeMode.system,
+        home: const MainPage(),
+        debugShowCheckedModeBanner: false,
       ),
-      home: MainPage(),
     );
   }
 }
