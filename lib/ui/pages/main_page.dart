@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_notes/core/constants/values_manager.dart'
     show AppSpacing;
+import 'package:flutter_notes/core/navigation/slide_route.dart';
 import 'package:flutter_notes/state/notes_view_model.dart';
 import 'package:flutter_notes/ui/pages/note_page.dart';
 import 'package:flutter_notes/ui/widgets/empty_state.dart';
@@ -15,9 +16,7 @@ class MainPage extends StatelessWidget {
   /// If a note was created, adds it to the list via [NotesViewModel].
   Future<void> _navigateToAddNote(BuildContext context) async {
     final result = await Navigator.of(context).push<Map<String, String?>>(
-      MaterialPageRoute(
-        builder: (context) => const NotePage(),
-      ),
+      slideFromRightPageRoute(const NotePage()),
     );
     // Add the note only if the widget is still mounted and a result was returned.
     if (result != null && context.mounted) {
