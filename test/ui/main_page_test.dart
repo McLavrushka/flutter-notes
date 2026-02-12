@@ -34,7 +34,7 @@ void main() {
     // Second field - description
     await tester.enterText(textFields.at(1), 'Desc');
 
-    // Find save button by icon 
+    // Find save button by icon
     await tester.tap(find.byIcon(Icons.check));
     await tester.pumpAndSettle();
 

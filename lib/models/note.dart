@@ -12,5 +12,6 @@ class Note {
   bool get hasDescription => description != null && description!.isNotEmpty;
 
   /// Whether the subtitle should reserve space for three lines(> 50 symbols).
-  bool get shouldReserveThreeLines => hasDescription && description!.length > 50;
+  bool get shouldReserveThreeLines =>
+      hasDescription && description!.length > 50;
 }
