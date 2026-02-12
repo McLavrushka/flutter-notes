@@ -3,6 +3,14 @@ name: Deploy
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'lib/**'
+      - 'test/**'
+      - 'pubspec.yaml'
+      - 'pubspec.lock'
+      - '.github/workflows/deploy.yml'
+      - 'analysis_options.yaml'
+      - '*.dart'
   workflow_dispatch: 
 
 jobs:
