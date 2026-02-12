@@ -43,10 +43,13 @@ class _NotePageState extends State<NotePage> {
       appBar: AppBar(
         title: const Text('New note'),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.check),
-            onPressed: _saveNote,
-            tooltip: 'Save',
+          Padding(
+            padding: const EdgeInsets.only(right: AppSpacing.s8),
+            child: IconButton(
+              icon: const Icon(Icons.check),
+              onPressed: _saveNote,
+              tooltip: 'Save',
+            ),
           ),
         ],
       ),
