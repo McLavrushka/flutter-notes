@@ -11,16 +11,6 @@ on:
       - '.github/workflows/ci.yml'
       - 'analysis_options.yaml'
       - '*.dart'
-  pull_request:
-    branches: [ main, dev ]
-    paths:
-      - 'lib/**'
-      - 'test/**'
-      - 'pubspec.yaml'
-      - 'pubspec.lock'
-      - '.github/workflows/ci.yml'
-      - 'analysis_options.yaml'
-      - '*.dart'
 
 jobs:
   test:
