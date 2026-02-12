@@ -12,7 +12,7 @@ class EmptyState extends StatelessWidget {
     super.key,
     this.icon = Icons.note_outlined,
     this.title = 'No notes yet',
-    this.subtitle = 'Press + to add note',
+    this.subtitle = 'Tap + to add a note',
   });
 
   @override
